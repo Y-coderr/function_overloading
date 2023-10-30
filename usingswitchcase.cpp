@@ -1,55 +1,59 @@
-#include <iostream>
-#include <math.h>
-//float PI=3.14;
-float volume(float side)
-{return side*side*side;}
-
-float volume(float length,float breadth, float height)
-{return length*breadth*height;}
-
-float volume(float radius, float height)
-{return M_PI*radius*radius*height;}
-
-
-
-int main() {
-    float vol;
-    int ch;
-    float a,b,c;
-   //std::cout<<"Select shape:\n1.Cube\n2.Cubid\n3.Cylinder\n";
-   //std::cin>>ch;
-
-        std::cout<<"How many no. of inputs you want to give:";
-        std::cin>>ch;
-    switch (ch) {
+#include<iostream>
+using namespace std;
+int volume(int l)
+{
+    return(l*l*l);
+}
+int volume(int l, int b , int h)
+{
+    return(l*b*h);
+}
+int volume (double r , double h)
+{
+    return (3.14*r*r*h);
+}
+int main()
+{
+    int ch,len,bth,ht,rad,vol;
+    cout<<"\n Menu";
+     cout<<"\n 1. cube";
+      cout<<"\n 2. cuboid";
+       cout<<"\n 3. cylinder";
+    
+    do{
+        cout<<"\n Enter the choice:";
+        cin>>ch;
+        switch (ch)
+        {
         case 1:
-        std::cout<<"You select cube.\nEnter side of cube:";
-        std::cin>>a;
-        vol=volume(a);
+        cout<<"\n Enter lenght of the cube:";
+        cin>>len;
+        cout<<"\n Volume of the cube is :"<<volume(len);
         break;
 
         case 2:
-        std::cout<<"You select cylinder.\nEnter radius of cylinder:";
-        std::cin>>a;
-        std::cout<<"Enter height of cylinder:";
-        std::cin>>b;
-        vol=volume(a,b);
-        break;
-        
-        case 3:
-        std::cout<<"You select cubid.\nEnter length of cubid:";
-        std::cin>>a;
-        std::cout<<"Enter breadth of cubid:";
-        std::cin>>b;
-        std::cout<<"Enter height of cubid:";
-        std::cin>>c;
-        vol=volume(a,b,c);
+        cout<<"\n Enter length , breadth and height of the cuboid:"<<endl;
+        cin>>len>>bth>>ht;
+        cout<<"\n Volume of the cuboid is :"<<volume(len,bth,ht);
         break;
 
+        case 3:
+        cout<<"\n Enter radis and height of the cylinder"<<endl;
+        cin>>rad>>ht;
+        cout<<"\n volume of the cylinder is :"<<volume(2,5);
+        break;
+
+        case 4:
+        cout<<"Exit";
+        
         default:
-        std::cout<<"Wrong Input...";
+        cout<<"Invalid choice";
+            break;
+        }
     }
-    std::cout<<"\n Volume is ";
-    std::cout<<vol;
+    while (ch!=4);
+    
+        return 0;
+    
     
 }
